@@ -30,3 +30,9 @@ let b ="copyright"
 console.log(checkDupes(a))
 console.log(checkDupes(b))
 
+function noDupeSet (s) {
+  return (s.length == new Set(s).size) 
+}
+
+console.log(noDupeSet(a))
+console.log(noDupeSet(b))
