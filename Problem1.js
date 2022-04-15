@@ -24,19 +24,18 @@ let s = "Jasmine Ann Jones"
 console.log(replaceSpaces(s));
 
 
-//  WIP on recursive function
 function recursive(s) {
   let url = "";
   console.log(s)
-  if (s.length == 1) {
-    if (s === " ") {
-      return "%20"
-    } else {
-      return s 
-    }
+  if (s[0] === " ") {
+    url += "%20"
   } else {
+    url += s[0] 
+  }
+  if (s.length != 1) {
   url += recursive(s.slice(1))
   }
+  return url
 }
 
 let recurse = recursive(s)
