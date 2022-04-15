@@ -28,4 +28,38 @@ function compress(s) {
 let s = "aaabccdddda"
 console.log(compress(s))
 
-console.log(...s)
+  
+// function recurse (s) {
+//   let newString = "";
+//   if (s.length === 1) {
+//     newString += s;
+//   } else {
+//     if (newString[newString.length - 1] == s[0]) {
+
+//     }
+//     newString += s[0] + recurse(s.slice(1));
+//   };
+//   return newString;
+// };
+
+
+
+// WIP to make it correct. 
+function recurse (s) {
+  let newString = "";
+  let dupeCounter = 1;
+  console.log("start" +dupeCounter)
+  if (s.length == 1) {
+    newString += s;
+    dupeCounter = 1;
+  } else {
+    console.log(dupeCounter)
+    if (s[0] == s[1]) {
+      dupeCounter++
+      recurse(s.slice(1))
+    }
+  }
+  return newString
+}
+
+console.log(recurse(s))
