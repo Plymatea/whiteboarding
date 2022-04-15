@@ -6,3 +6,27 @@
 
 // Output: [7, 9, "hi", 12, 53]
 
+function noDupes (array) {
+  let newArray = [];
+  array.forEach(element => {
+    if (!newArray.includes(element)) {
+      newArray.push(element)
+    }
+  });
+  return newArray
+}
+
+let  array = [7, 9, "hi", 12, "hi", 7, 53]
+console.log(noDupes(array))
+
+let unique = [...new Set(array)]
+console.log(unique)
+
+
+
+let uniqueFilter = array.filter((element, index) => {
+  return array.indexOf(element) === index;
+});
+
+console.log(uniqueFilter)
+
