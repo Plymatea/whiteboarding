@@ -5,6 +5,8 @@
 // Input: [7, 9, "hi", 12, "hi" 7, 53]
 
 // Output: [7, 9, "hi", 12, 53]
+let  array = [7, 9, "hi", 12, 12, "hi", 7, 53, NaN, 7]
+
 
 function noDupes (array) {
   let newArray = [];
@@ -14,21 +16,25 @@ function noDupes (array) {
     }
   });
   return newArray
-}
+};
 
-let  array = [7, 9, "hi", 12, 12, "hi", 7, 53, NaN, 7]
-console.log(noDupes(array))
+console.log(noDupes(array));
 
-let unique = [...new Set(array)]
+///////////////////////////////////////
+
+let unique = [...new Set(array)];
+console.log(unique)
 console.log(new Set(array))
 
-
+///////////////////////////////////////
 
 let uniqueFilter = array.filter((element, index) => {
   return array.indexOf(element) === index;
 });
 
 console.log(uniqueFilter)
+
+//////////////////////////////////
 
 function recurseWrapper(array) {
   let newArr = [];
@@ -44,5 +50,16 @@ function recurseWrapper(array) {
   return newArr
 };
 
-
 console.log(recurseWrapper(array))
+
+function recurse2(array, newArr = []) {
+  if (!newArr.includes(array[0])) {
+    newArr.push(array[0]);
+  };
+  if (array.length != 1) {
+    return recurse2(array.slice(1), newArr);
+  };
+  return newArr
+};
+
+console.log(recurse2(array))
