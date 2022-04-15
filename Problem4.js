@@ -10,3 +10,23 @@
 
 // Output: true
 
+function checkDupes (s) {
+  let flag = true;
+  for (let i=0; i<s.length; i++) {
+    for (let j=i+1; j<s.length; j++) {
+      if (s[i] == s[j]) {
+        return false
+      } else {
+        continue
+      }
+    }
+  }
+  return flag
+}
+
+let a = "hello"
+let b ="copyright"
+
+console.log(checkDupes(a))
+console.log(checkDupes(b))
+
