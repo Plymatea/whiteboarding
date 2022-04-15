@@ -16,11 +16,12 @@ function noDupes (array) {
   return newArray
 }
 
-let  array = [7, 9, "hi", 12, "hi", 7, 53]
+let  array = [7, 9, "hi", 12, "hi", 7, 53, NaN, undefined]
 console.log(noDupes(array))
 
 let unique = [...new Set(array)]
 console.log(unique)
+console.log(new Set(array))
 
 
 
@@ -29,4 +30,6 @@ let uniqueFilter = array.filter((element, index) => {
 });
 
 console.log(uniqueFilter)
+
+
 
