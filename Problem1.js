@@ -10,7 +10,7 @@
 
 function replaceSpaces (s) {
   let url = "";
-  for (i=0; i<s.length; i++) {
+  for (let i=0; i<s.length; i++) {
     if (s[i] === " ") {
       url += "%20";
     } else {
@@ -23,6 +23,8 @@ function replaceSpaces (s) {
 let s = "Jasmine Ann Jones"
 console.log(replaceSpaces(s));
 
+
+//  WIP on recursive function
 function recursive(s) {
   let url = "";
   console.log(s)
