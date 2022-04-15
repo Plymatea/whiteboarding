@@ -5,6 +5,12 @@
 // Input: [7, 9, "hi", 12, "hi" 7, 53]
 
 // Output: [7, 9, "hi", 12, 53]
+
+// should i expect an array as the given input?
+// What size array's should I expect?
+// What element types should I expect in the array?
+
+
 let  array = [7, 9, "hi", 12, 12, "hi", 7, 53, NaN, 7]
 
 
@@ -51,6 +57,9 @@ function recurseWrapper(array) {
 };
 
 console.log(recurseWrapper(array))
+
+///////////////////
+
 
 function recurse2(array, newArr = []) {
   if (!newArr.includes(array[0])) {
