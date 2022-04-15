@@ -16,11 +16,10 @@ function noDupes (array) {
   return newArray
 }
 
-let  array = [7, 9, "hi", 12, "hi", 7, 53, NaN, undefined]
+let  array = [7, 9, "hi", 12, 12, "hi", 7, 53, NaN, 7]
 console.log(noDupes(array))
 
 let unique = [...new Set(array)]
-console.log(unique)
 console.log(new Set(array))
 
 
@@ -31,5 +30,19 @@ let uniqueFilter = array.filter((element, index) => {
 
 console.log(uniqueFilter)
 
+function recurseWrapper(array) {
+  let newArr = [];
+  function recurse (arr) {
+    if (!newArr.includes(arr[0])) {
+      newArr.push(arr[0]);
+    };
+    if (arr.length != 1) {
+      return recurse(arr.slice(1));
+    };
+  };
+  recurse(array);
+  return newArr
+};
 
 
+console.log(recurseWrapper(array))
